@@ -6,9 +6,9 @@ mysql:
       - 33060:3306
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      TZ: America/Manaus
+      TZ: ${TZ}
       # MYSQL_RANDOM_ROOT_PASSWORD: '1'
-      MYSQL_ROOT_PASSWORD: '987654321@mysql!'
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
     volumes:
       - mysql-srv01:/var/lib/mysql
 volumes:
