@@ -1,0 +1,15 @@
+mysql:
+  container_name: mysql-srv01
+    image: mysql:8.0-debian
+    restart: always
+    ports:
+      - 33060:3306
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      TZ: America/Manaus
+      # MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_ROOT_PASSWORD: '987654321@mysql!'
+    volumes:
+      - mysql-srv01:/var/lib/mysql
+volumes:
+  mysql-srv01:
